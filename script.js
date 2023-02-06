@@ -74,7 +74,7 @@ function reset() {
 }
 reset();
 //Funciones para agregar los puntos al marcador
-let scoreA = 0;
+let scoreA = 0 ;
 let scoreR = 0;
 function addScore (){
     scoreA++
@@ -84,32 +84,25 @@ function reduceScore (){
     scoreR-- 
     desaciertos.innerHTML = scoreR;
 }
-function resetScoreR (){
-    scoreR = scoreR + 3
-    return scoreR
-}
-function resetScoreA (){
-    scoreA = scoreA - 3
-    return scoreA
-}
 //funcion para terminar el juego
 function endGame(){
-    if(scoreA > 2 ){
+    if(scoreA === 3 ){
         alert(`You Win the game!!`)
         aciertos.innerHTML = 0;
         desaciertos.innerHTML = 0;
         aside.style.background = ("none");
-        resetScoreA ();
+        scoreA = 0;
+        scoreR = 0;
 
-    }else if (scoreR < - 2){
+    }else if (scoreR === -3){
         alert(`GameOver!!! you missed your three chances`)
         desaciertos.innerHTML = 0;
         aciertos.innerHTML = 0;
-        aside.style.background = ("none");    
-        resetScoreR();   
+        aside.style.background = ("none"); 
+        scoreA = 0;
+        scoreR = 0;
     }   
 }
-
 
 
 
